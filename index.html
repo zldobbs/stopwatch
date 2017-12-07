@@ -1,0 +1,73 @@
+<!--
+  Zach Dobbs
+  CS4830 Fourth Exploration
+  Developing a clock application using Foundation CSS framework, Sass, and Vue.js
+-->
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Clock</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import custom stylesheets. These stylesheets are precompiled using sass -->
+    <link href="stylesheets/custom.css" type="text/css" rel="stylesheet">
+    <link href="stylesheets/typography.css" type="text/css" rel="stylesheet">
+    <!-- jQuery import for dependancies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+    <!-- Foundation Imports -->
+    <!-- Compressed CSS -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"
+      integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY="
+      crossorigin="anonymous" />
+    <!-- Compressed JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"
+      integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs="
+      crossorigin="anonymous"></script>
+    <!-- Import vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <h1>Stopwatch</h1>
+      </div>
+    </div>
+    <div id="clock">
+      <div class="grid-container fluid b-n-w">
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 cell center">
+                <h1>{{ minutes }}:{{ seconds }}.{{ miliseconds }}</h1>
+                <button type="button" class="button" v-on:click="start">Start</button>
+                <button type="button" class="button" v-on:click="stop">Stop</button>
+                <span v-if="running">
+                  <button type="button" class="button" v-on:click="lap">Lap</button>
+                </span>
+                <span v-if="stopped">
+                  <button type="button" class="button" v-on:click="reset">Reset</button>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <h2>Laps</h2>
+        <div id="lap-box">
+          <table>
+            <tr v-for="lap in laps">
+              <td>{{ lap.text }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Import custom js -->
+  <script src="js/clock.js"></script>
+</html>
