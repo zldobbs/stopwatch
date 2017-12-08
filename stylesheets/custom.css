@@ -73,35 +73,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 10, ../sass/custom.scss */
 .center h1 {
-  font-size: 14em;
-}
-@media screen and (max-width: 320) {
-  /* line 10, ../sass/custom.scss */
-  .center h1 {
-    font-size: 6em;
-  }
+  font-size: 15vw;
 }
 
-/* line 18, ../sass/custom.scss */
+/* line 15, ../sass/custom.scss */
 .grid-container {
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
-/* line 23, ../sass/custom.scss */
+/* line 20, ../sass/custom.scss */
 #lap-box {
   text-align: center;
   height: 190px;
   overflow-y: scroll;
 }
 
-/* line 29, ../sass/custom.scss */
+/* line 26, ../sass/custom.scss */
 .b-n-w {
   background-color: #000;
   color: #FFF;
 }
 
-/* line 34, ../sass/custom.scss */
+/* line 31, ../sass/custom.scss */
 .data-accordian {
   height: 10vh;
   overflow-y: scroll;
